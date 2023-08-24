@@ -1,11 +1,11 @@
+#include "main.h"
 #include <stdio.h>
 
 /**
  * print_line - prints a s bytes of a buffer
+ * @l: line of buffer to print
  * @c: buffer to print
  * @s: bytes of buffer to print
- * @l: line of buffer to print
- *
  * Return: void
  */
 
@@ -32,11 +32,10 @@ void print_line_helper(char *c, int s, int l)
 
 /**
  * print_buffer - prints a buffer
- * @size: size of buffer
  * @b: buffer to print
+ * @size: size of buffer
  * Return: void
  */
-
 void print_buffer(char *b, int size)
 {
     int x;
@@ -56,4 +55,3 @@ void print_buffer(char *b, int size)
     if (size == 0)
         putchar('\n');
 }
-
