@@ -58,7 +58,8 @@ int _stoi(char *s)
  * @argc: the number of arguments
  * @argv: the array of arguments
  *
- * Return: 0 if Success, 1 otherwise
+ * Return: 0 if Success,
+ * 1 otherwise
  */
 int main(int argc, char *argv[])
 {
