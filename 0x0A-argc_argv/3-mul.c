@@ -57,7 +57,6 @@ int _stoi(char *s)
  * main - multiplies two numbers
  * @argc: the number of arguments
  * @argv: the array of arguments
- *
  * Return: 0 if Success,
  * 1 otherwise
  */
