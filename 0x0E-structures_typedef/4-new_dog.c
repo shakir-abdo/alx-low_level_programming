@@ -9,6 +9,7 @@
 int _strlen(char *s)
 {
 	int x;
+
 	x = 0;
 
 	while (s[x] != '\0')
@@ -28,6 +29,7 @@ int _strlen(char *s)
 char *_strcpy(char *dest, char *src)
 {
 	int x, len;
+	
 	len = 0;
 
 	while (src[len] != '\0')
@@ -54,6 +56,7 @@ char *_strcpy(char *dest, char *src)
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *dog;
+	
 	int gg1, gg2;
 
 	gg1 = _strlen(name);
