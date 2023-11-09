@@ -3,12 +3,12 @@
 #include <time.h>
 
 /**
- * f35 - finds the biggest number
- * @usrn: username
+ * f1 - finds the biggest number
  * @len: length of username
+ * @usrn: username
  * Return: the biggest number
  */
-int f35(char *usrn, int len)
+int f1(char *usrn, int len)
 {
 	int ch;
 	int vch;
@@ -31,12 +31,12 @@ int f35(char *usrn, int len)
 }
 
 /**
- * f5 - multiplies each char of username
- * @usrn: username
+ * f2 - multiplies each char of username
  * @len: length of username
+ * @usrn: username
  * Return: multiplied char
  */
-int f5(char *usrn, int len)
+int f2(char *usrn, int len)
 {
 	int ch;
 	int vch;
@@ -53,9 +53,30 @@ int f5(char *usrn, int len)
 }
 
 /**
+ * f3 - generates a random char
+ * @usrn: username
+ * Return: a random char
+ */
+int f3(char *usrn)
+{
+	int ch;
+	int vch;
+
+	ch = vch = 0;
+
+	while (vch < *usrn)
+	{
+		ch = rand();
+		vch += 1;
+	}
+
+	return (((unsigned int)ch ^ 229) & 63);
+}
+
+/**
  * main - Entry point
- * @argc: arguments count
  * @argv: arguments vector
+ * @argc: arguments count
  * Return: Always 0
  */
 int main(int argc, char **argv)
@@ -89,35 +110,14 @@ int main(int argc, char **argv)
 		vch = vch + 1;
 	}
 	keygen[2] = ((char *)alph)[(ch ^ 85) & 63];
-	/* ----------- f35 ----------- */
-	keygen[3] = ((char *)alph)[f35(argv[1], len)];
-	/* ----------- f5 ----------- */
-	keygen[4] = ((char *)alph)[f5(argv[1], len)];
-	/* ----------- f6 ----------- */
-	keygen[5] = ((char *)alph)[f6(argv[1])];
+	/* ----------- f1 ----------- */
+	keygen[3] = ((char *)alph)[f1(argv[1], len)];
+	/* ----------- f2 ----------- */
+	keygen[4] = ((char *)alph)[f2(argv[1], len)];
+	/* ----------- f3 ----------- */
+	keygen[5] = ((char *)alph)[f3(argv[1])];
 	keygen[6] = '\0';
 	for (ch = 0; keygen[ch]; ch++)
 		printf("%c", keygen[ch]);
 	return (0);
-}
-
-/**
- * f6 - generates a random char
- * @usrn: username
- * Return: a random char
- */
-int f6(char *usrn)
-{
-	int ch;
-	int vch;
-
-	ch = vch = 0;
-
-	while (vch < *usrn)
-	{
-		ch = rand();
-		vch += 1;
-	}
-
-	return (((unsigned int)ch ^ 229) & 63);
 }
